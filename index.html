@@ -12,8 +12,14 @@
                 background-color:yellow;
             }
 
-          li.my-list{
-    background-color:orange;
+            li.my-list{
+                background-color:orange;
+}
+            div#new-div, li.new-list{
+                background-color:blue;
+}
+            ul.my-kids>li{
+                background-color:green;
 }
         </style>
     </head>
@@ -27,6 +33,7 @@
                 <li><a href="#id">id</a></li>
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
+                <li><a href="#child">child</a></li>
             </ul>
         </nav> 
     </header>           
@@ -59,6 +66,7 @@
 
 
             <p>Here's what it looks like:</p>
+            <div id="id-div"></div>
             <div>
               <ul>
                 <li class="my-list">I'm in an list with a class named "my-list"</li>
@@ -68,6 +76,50 @@
             </div>
         </fieldset>
       
+        <fieldset>
+            <legend><a id="compound">compound</a></legend>
+            <p></p>
+            <p>A conmpund selector allows us to use multuple selectors separated by commas. This allows us to apply the same rules to several selectors.</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>div#new-div, li.new-list{
+    background-color:blue;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div id="new-div">Im inside a div with an id of new-div</div>
+            <div>
+                
+              <ul>
+                <li class="new-list">I'm in an list with a class named "new-list"</li>
+                <li class="new-list">I'm in an list with a class named "new-list"</li>
+                <li class="new-list">I'm in an list with a class named "new-list"</li>
+              </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="child">child</a></legend>
+            <p></p>
+            <p>A child selector allows us to access the nest immediate elements inside the current element.</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>ul.my-kids>li{
+    background-color:green;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div>
+                
+              <ul class="my-kids">
+                <li>I'm in an li inside a ul with a class of "my-kids"</li>
+                <li>I'm in an li inside a ul with a class of "my-kids"</li>
+                <li>I'm in an li inside a ul with a class of "my-kids"</li>
+
+              </ul>
+            </div>
+        </fieldset>
+
         <footer class="page-footer">
             <p><small>&copy; 2023 by 
                 Randy Huynh, All Rights Reserved ~ 
